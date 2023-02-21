@@ -9,7 +9,7 @@ const FormBreed = () => {
   return (
     <form onSubmit={handleBreed} className="flex lg:flex-row flex-col gap-2 p-3">
       <input
-        className="p-2 border border-gray-300 lg:w-80 sm:w-11  text-2xl "
+        className="p-2 border border-gray-300 lg:w-80  text-2xl "
         data-type="breed"
         placeholder="Ingrese una raza de perro"
         onChange={(e) => setBreedName(e.target.value)}

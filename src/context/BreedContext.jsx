@@ -4,11 +4,12 @@ import { getAllDogs } from "../services/getDogs";
 import { useParams } from "react-router-dom";
 import { useEffect } from "react";
 import { useRef } from "react";
+import Swal from 'sweetalert2'
 
 export const ContextBreed = createContext();
 
 export const BreedProvider = ({ children }) => {
-  const [breedName, setBreedName] = useState("hound");
+  const [breedName, setBreedName] = useState("");
   const [dogs, setDogs] = useState([]);
   const [favorites, setFavorites] = useState([]);
   const [error, setError] = useState(false);
@@ -24,10 +25,34 @@ export const BreedProvider = ({ children }) => {
     let breedArray = favorites.find((breed) => breed === dataMovie.imgURL);
 
     if (!breedArray) {
-      alert("se agrego correctamente");
+      const Toast = Swal.mixin({
+        toast: true,
+        position: 'top',
+        showConfirmButton: false,
+        timer: 3000,
+        timerProgressBar: true,
+      })
+      
+      Toast.fire({
+        icon: 'success',
+        title: 'se agrego correctamente'
+      })
+      // alert("se agrego correctamente");
       setFavorites([...favorites, imgURL]);
     } else {
-      alert("se elimino correctamente");
+      const Toast = Swal.mixin({
+        toast: true,
+        position: 'top',
+        showConfirmButton: false,
+        timer: 3000,
+        timerProgressBar: true,
+      })
+      
+      Toast.fire({
+        icon: 'error',
+        title: 'se elimino correctamente'
+      })
+     
       let removeFavBreed = favorites.filter(
         (breed) => breed !== dataMovie.imgURL
       );
