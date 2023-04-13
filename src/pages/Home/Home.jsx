@@ -43,7 +43,7 @@ const Home = () => {
             />
           </div>
         ) : (
-          <div style={{ columnCount: 2, columnWidth: 50 }} className="p-3">
+          <div  className="p-3 columns-2 md:columns-5 column">
             {dogs.map((dog, idx) => (
               <BreedItem dog={dog} key={idx} />
             ))}

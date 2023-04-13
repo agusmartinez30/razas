@@ -5,18 +5,19 @@ import { ContextBreed } from "../../context/BreedContext";
 
 const Favorites = () => {
   const { favorites, displayFav, displayFavorites } = useContext(ContextBreed);
-  console.log(favorites);
   return (
     <>
       {displayFav ? (
         <section
-          className="bg-red-300 w-full md:w-96 z-20"
+          className="w-full md:w-full z-20 bg-red-300 "
           style={{
             height: "100vh",
             position: "fixed",
             top: "0",
             right: "0",
             overflow: "scroll",
+            transition: ".3s ease",
+            overflowX: "hidden"
           }}
         >
           <section>
@@ -31,7 +32,7 @@ const Favorites = () => {
               </h2>
             </header>
 
-            <div style={{ columnCount: 2, columnWidth: 50, padding: "15px" }}>
+            <div  className="p-3 columns-2 md:columns-5 column">
               {favorites.map((fav) => (
                 <BreedItemFav fav={fav} />
               ))}

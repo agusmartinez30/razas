@@ -6,8 +6,8 @@ const BreedItem = ({ dog }) => {
   const { toggleFavorite } = useContext(ContextBreed);
 
   return (
-    <div className="relative ">
-      <img className="w-96 rounded-lg mb-2" src={dog} />
+    <div className="relative" >
+      <img className="w-full rounded-2xl shadow-sm mb-2" src={dog} />
       <button
         onClick={(e) => toggleFavorite(e)}
         // ref={breedRef}

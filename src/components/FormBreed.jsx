@@ -7,7 +7,7 @@ const FormBreed = () => {
   const { setBreedName, handleBreed } = useContext(ContextBreed);
 
   return (
-    <form onSubmit={handleBreed} className="w-full flex gap-6 p-2 bg-slate-50 rounded-xl shadow-lg">
+    <form onSubmit={handleBreed} className="w-full md:w-1/2 m-auto flex gap-6 p-2 bg-slate-50 rounded-xl shadow-lg">
       <input
         className="w-full p-2 text-xl bg-transparent  focus:outline-none "
         data-type="breed"
