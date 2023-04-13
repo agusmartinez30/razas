@@ -7,17 +7,23 @@ const FormBreed = () => {
   const { setBreedName, handleBreed } = useContext(ContextBreed);
 
   return (
-    <form onSubmit={handleBreed} className="flex lg:flex-row flex-col gap-2 p-3">
+    <form onSubmit={handleBreed} className="w-full flex gap-6 p-2 bg-slate-50 rounded-xl shadow-lg">
       <input
-        className="p-2 border border-gray-300 lg:w-80  text-2xl "
+        className="w-full p-2 text-xl bg-transparent  focus:outline-none "
         data-type="breed"
         placeholder="Ingrese una raza de perro"
         onChange={(e) => setBreedName(e.target.value)}
       />
-      <button className="w-full lg:w-40 p-3 rounded bg-green-600 text-white text-2xl">
-        Buscar
+      <button className=" p-3 rounded-xl bg-red-300  text-white text-2xl">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round">
+          <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+          <circle cx="10" cy="10" r="7" />
+          <line x1="21" y1="21" x2="15" y2="15" />
+        </svg>
       </button>
     </form>
+
+
   );
 };
 

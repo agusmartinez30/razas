@@ -10,7 +10,7 @@ const Favorites = () => {
     <>
       {displayFav ? (
         <section
-          className="bg-green-300 w-full md:w-96"
+          className="bg-red-300 w-full md:w-96 z-20"
           style={{
             height: "100vh",
             position: "fixed",
@@ -19,11 +19,19 @@ const Favorites = () => {
             overflow: "scroll",
           }}
         >
-          <section className="relative top-12">
-            <h2 className="text-center text-gray-800 font-medium text- text-5xl py-6">
-              Favoritos
-            </h2>
-            <div style={{ columnCount: 2, columnWidth: 300, padding: "15px" }}>
+          <section>
+            <header className="flex items-center p-3 justify-around gap-4 ">
+              <button onClick={displayFavorites} className=" rounded-xl border border-gray-900 text-red p-3 text-2xl hover:bg-red-300"><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-x" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                <line x1="18" y1="6" x2="6" y2="18" />
+                <line x1="6" y1="6" x2="18" y2="18" />
+              </svg></button>
+              <h2 className="w-full text-center text-gray-800 font-medium text- text-5xl py-6">
+                Favoritos
+              </h2>
+            </header>
+
+            <div style={{ columnCount: 2, columnWidth: 50, padding: "15px" }}>
               {favorites.map((fav) => (
                 <BreedItemFav fav={fav} />
               ))}
