@@ -33,14 +33,10 @@ const Home = () => {
           </ul>
         </div> */}
         {error ? (
-          <div className="w-full flex flex-col-reverse items-center gap-6">
+          <div className="w-full relative top-12  left-0 flex flex-col-reverse items-center gap-6">
             <h2 className="text-center text-black-50 text-3xl">
               Ups.. no hay resultados, intenta con otra busqueda!
             </h2>
-            <img
-              className="w-36"
-              src="https://cdn-icons-png.flaticon.com/512/2909/2909736.png"
-            />
           </div>
         ) : (
           <div  className="p-3 columns-2 md:columns-5 column">
